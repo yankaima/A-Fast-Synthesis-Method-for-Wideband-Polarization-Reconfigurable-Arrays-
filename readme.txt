@@ -2,28 +2,19 @@ A Fast Synthesis Method for Wideband Polarization Reconfigurable Arrays Based on
 
 This repository provides a MATLAB implementation of a cluster-entropy-based optimization method for synthesizing the polarization-state distribution of large-scale wideband polarization reconfigurable arrays (PRAs).
 
-The code formulates the polarization allocation problem as a binary mixed-integer optimization problem, where multi-scale local windows are used to suppress local clustering of identical polarization states. The optimization is implemented in YALMIP and solved by Gurobi.
-
 Required toolboxes / solvers
+
 YALMIP：Used for modeling binary optimization variables and constraints.
 Gurobi：Used as the MILP solver backend.
-epository structure
 
-A typical project structure can be:
-
-.
-├── main_cluster_entropy_64x64.m
-├── tiling_countsets_xy.m
-├── figures/
-│   └── polarization_distribution_64x64.png
-└── README.md
 File description
+
 clusterentropymodel6464.m:   Main optimization script for the 64×64 PRA polarization-state synthesis.
 tiling_countsets2.m:   Generate the multi-scale tiling window sets and corresponding linear index lists.
-R_calcu:   Calculate the autocorrelation functions for a given polarization-state map
+R_calcu.m:   Calculate the autocorrelation functions for a given polarization-state map
 
 
-the optimization summary:
+Optimization summary:
 
 Set parameter MIPGap to value 0.01
 Set parameter NodefileDir to value ""
